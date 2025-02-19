@@ -8,8 +8,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       // Application name
-      title: 'Flutter Hello World',
+      title: 'Sifuentes flutter',
       // Application theme data, you can set the colors for the application as
       // you want
       theme: ThemeData(
@@ -17,25 +18,40 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Sifuentes AppBar'),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
   final String title;
-  const MyHomePage({super.key, required this.title});  
+  const MyHomePage({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {}, //Lo que esta entre llaves son las acciones
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.more_vert,
+            ),
+            onPressed: () {},
+          )
+        ],
+        backgroundColor: Colors.lightBlue,
         // The title text which will be shown on the action bar
         title: Text(title),
+        leading: const Icon(Icons.sports_baseball_outlined),
+        centerTitle: true,
       ),
       body: Center(
         child: Text(
-          'Hello, World!',
+          'Hola Luis Orlando Sifuentes Montañez 22308051281313 con AppBar',
         ),
       ),
     );
